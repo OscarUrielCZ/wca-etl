@@ -12,3 +12,12 @@ def build_url(url: str):
         return  BASE_URL + url
     else:
         return BASE_URL + '/' + url
+    
+def get_href_and_text(a):
+    link, text = None, None
+    
+    if a and a.has_attr('href'):
+        link = a['href'].strip()
+        text = a.text.strip()
+    
+    return link, text

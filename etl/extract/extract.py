@@ -5,6 +5,12 @@ from etl.extract.scraper import (
 
 competition_year = 2024
 
+url1 = 'https://www.worldcubeassociation.org/competitions/BarbertonMini22024'
+url2 = 'https://www.worldcubeassociation.org/competitions/AudentesOpen2024'
+
+request_competition_data(url1)
+# request_competition_links(competition_year)
+
 
 
 
