@@ -39,6 +39,20 @@ class Competition():
 
         print(self.name, self.date, self.city, self.venue, self.address, self.organizers, self.delegates)
 
+        menu_links = self.__get_menu_links()
+
+        print(menu_links)
+
+    def __get_menu_links(self) -> list:
+        menu_items = self._html.select('#competition-nav .list-group-item')
+
+        if not menu_items or len(menu_items) == 0:
+            raise Exception('Could not find menu items')
+
+        menu_items = list(map(get_href_and_text, menu_items))
+
+        return menu_items
+
     def _extract_links(self, elem) -> list:
         return list(map(get_href_and_text, elem.select('a')))
     

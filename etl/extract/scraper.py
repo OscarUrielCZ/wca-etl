@@ -12,22 +12,6 @@ def request_competition_data(url: str):
     comp = Competition(url)
     comp.get_general_info()
 
-    # check out if competition has results or not
-    # menu_items = html.select('#competition-nav .list-group-item')
-
-    # if not menu_items or len(menu_items) == 0:
-    #     raise Exception('Could not find menu items')
-
-    # menu_items = list(map(get_href_and_text, menu_items))
-
-    # if menu_items[0][1] == 'Results':
-    #     pass
-    # else:
-    #     pass
-
-    # print(menu_items)
-
-
 def request_competition_links(year: int) ->  list[str]:
     competitions_url = f'https://www.worldcubeassociation.org/competitions?region=all&search=&year={year}&state=past&from_date=&to_date=&delegate=&display=list'
 
