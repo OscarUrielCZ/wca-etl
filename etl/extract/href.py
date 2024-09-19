@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
 @dataclass
-class Competitor:
-    name: str
+class Href:
     link: str
+    text: str

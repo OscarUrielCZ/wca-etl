@@ -11,6 +11,11 @@ def get_general_info():
 def request_competition_data(url: str):
     comp = Competition(url)
     comp.get_general_info()
+    
+    if comp.has_results:
+        print(comp.result_links)
+    else:
+        print('No results found')
 
 def request_competition_links(year: int) ->  list[str]:
     competitions_url = f'https://www.worldcubeassociation.org/competitions?region=all&search=&year={year}&state=past&from_date=&to_date=&delegate=&display=list'
